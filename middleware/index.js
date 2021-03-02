@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-let SALT_ROUNDS = 12
-let APP_SECRET = 'supersecretkey'
+const SALT_ROUNDS = 12
+const APP_SECRET = 'supersecretkey'
 
 const hashPassword = async (password) => {
   // Accepts a password from the request body
