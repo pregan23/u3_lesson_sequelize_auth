@@ -94,7 +94,7 @@ Start by creating a password hashing function:
 
 ```js
 const hashPassword = async (password) => {
-  let hashedPassword = await bcrypt.hash(password, 12)
+  let hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
   return hashedPassword
 }
 ```
