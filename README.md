@@ -110,7 +110,7 @@ We're using `async/await` because the hashing process takes some time to complet
 Create a password comparing function:
 
 ```js
-const comparePassword = async (password, storedPassword) => {
+const comparePassword = async (storedPassword, password) => {
   let passwordMatch = await bcrypt.compare(password, storedPassword)
   return passwordMatch
 }
@@ -298,7 +298,7 @@ We'll be working in the `Login` function:
   ```js
   if (
     user &&
-    middleware.comparePassword(user.passwordDigest, req.body.password)
+    (await middleware.comparePassword(user.passwordDigest, req.body.password))
   ) {
     // Next code goes here
   }
