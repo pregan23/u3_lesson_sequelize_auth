@@ -140,11 +140,15 @@ Add a function called `verifyToken`:
 ```js
 const verifyToken = (req, res, next) => {
   const { token } = res.locals
-  let payload = jwt.verify(token, APP_SECRET)
-  if (payload) {
-    return next()
+  try {
+    let payload = jwt.verify(token, APP_SECRET)
+    if (payload) {
+      return next()
+    }
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
+  } catch (error) {
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   }
-  res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
 }
 ```
 
@@ -164,7 +168,7 @@ Add a function called `stripToken`:
 ```js
 const stripToken = (req, res, next) => {
   try {
-    const token = req.headers['authorization'].split(' ')[1]
+    const token = req.headers['Authorization'].split(' ')[1]
     if (token) {
       res.locals.token = token
       return next()
