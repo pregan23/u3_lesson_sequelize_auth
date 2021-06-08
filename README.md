@@ -86,7 +86,7 @@ When storing these variables in a `.env` file, you'll need to convert `SALT_ROUN
 
 #### Hashing Passwords
 
-> **The functions necessary will provided followed by a breakdown of how each function operates**
+> **The functions necessary are provided followed by a breakdown of how each function operates**
 
 ---
 
