@@ -273,9 +273,9 @@ Open `Insomnia` and create a `POST` request to `http://localhost:3001/auth/regis
 
 ```json
 {
-  "name": "string",
-  "email": "string",
-  "password": "string"
+  "name": "John Doe",
+  "email": "john@mail.com",
+  "password": "1234"
 }
 ```
 
@@ -373,9 +373,9 @@ The request body should be the following:
 
 ```json
 {
-  "title": "string",
-  "body": "string",
-  "image": "string"
+  "title": "New Post",
+  "body": "Wow much awesome",
+  "image": "http://image.com/doge"
 }
 ```
 
