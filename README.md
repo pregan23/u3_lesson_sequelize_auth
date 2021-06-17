@@ -179,7 +179,7 @@ const stripToken = (req, res, next) => {
 }
 ```
 
-![](images/strip_token.png)
+![](https://ray.so/?title=Uploaded+using+RayThis+Extension&theme=breeze&spacing=16&background=false&darkMode=true&code=Y29uc3Qgc3RyaXBUb2tlbiA9IChyZXEsIHJlcywgbmV4dCkgPT4gewogIHRyeSB7CiAgICBjb25zdCB0b2tlbiA9IHJlcS5oZWFkZXJzWydhdXRob3JpemF0aW9uJ10uc3BsaXQoJyAnKVsxXQogICAgaWYgKHRva2VuKSB7CiAgICAgIHJlcy5sb2NhbHMudG9rZW4gPSB0b2tlbgogICAgICByZXR1cm4gbmV4dCgpCiAgICB9CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIHJlcy5zdGF0dXMoNDAxKS5zZW5kKHsgc3RhdHVzOiAnRXJyb3InLCBtc2c6ICdVbmF1dGhvcml6ZWQnIH0pCiAgfQp9&language=javascript)
 
 ### Bundling Our Functions
 
