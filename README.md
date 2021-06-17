@@ -21,10 +21,10 @@ We'll start by creating some middleware to handle our authentication and authori
 
 ### Installing Necessary Dependencies
 
-In order for our authentication/authorization middleware to work, we'll need some depedencies. Let's start by installing a few packages:
+In order for our authentication/authorization middleware to work, we'll need some dependencies. Let's start by installing a few packages:
 
 ```sh
-npm install bcrypt jsonwebtoken
+npm install bcrypt jsonwebtoken dotenv
 ```
 
 #### **Bcrypt**
@@ -65,6 +65,7 @@ Start by requiring the necessary packages, we'll need `bcrypt` and `jsonwebtoken
 ```js
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 ```
 
 Next we need to create some variables in order to tell `bcrypt` how complex we want the hash to be for a password and a secret that will sign our `JWT` tokens.
@@ -72,8 +73,8 @@ Next we need to create some variables in order to tell `bcrypt` how complex we w
 Add the following to `middleware/index.js`
 
 ```js
-const SALT_ROUNDS = 12
-const APP_SECRET = 'supersecretkey'
+const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
+const APP_SECRET = process.env.APP_SECRET
 ```
 
 `SALT_ROUNDS` is how complex the hash will be for our passwords, `12` is a good number because it would take even super computers years to crack.
@@ -83,6 +84,14 @@ const APP_SECRET = 'supersecretkey'
 **THESE VARIABLES SHOULD ALWAYS BE STORED IN A `.env` FILE**
 
 When storing these variables in a `.env` file, you'll need to convert `SALT_ROUNDS` to an integer.
+
+Create the variables in a `.env` file at the **root** of your project:
+
+`sequelize_auth`
+```
+APP_SECRET=supersecretkey
+SALT_ROUNDS=12
+```
 
 #### Hashing Passwords
 
