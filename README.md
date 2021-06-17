@@ -72,6 +72,8 @@ Next we need to create some variables in order to tell `bcrypt` how complex we w
 
 Add the following to `middleware/index.js`
 
+_When storing these variables in a `.env` file, you'll need to convert `SALT_ROUNDS` to an integer._
+
 ```js
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
 const APP_SECRET = process.env.APP_SECRET
@@ -83,11 +85,8 @@ const APP_SECRET = process.env.APP_SECRET
 
 **THESE VARIABLES SHOULD ALWAYS BE STORED IN A `.env` FILE**
 
-When storing these variables in a `.env` file, you'll need to convert `SALT_ROUNDS` to an integer.
-
 Create the variables in a `.env` file at the **root** of your project:
 
-`sequelize_auth`
 ```
 APP_SECRET=supersecretkey
 SALT_ROUNDS=12
